@@ -20,7 +20,6 @@ const OrangeBtn = ({ children, className = "", link, ...props }) => {
     ${className}
   `;
 
-  // Если передан link, рендерим компонент Link из React Router
   if (link) {
     return (
       <Link to={link} className={baseClasses} {...props}>
@@ -29,7 +28,6 @@ const OrangeBtn = ({ children, className = "", link, ...props }) => {
     );
   }
 
-  // Если link нет, возвращаем обычную кнопку
   return (
     <button className={baseClasses} {...props}>
       {children}

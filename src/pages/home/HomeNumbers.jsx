@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
 import HomeNumbersCorner from "../../assets/HomeNumbersCorner.svg";
+import ZoominComponent from "../../ui/ZoomInComponent.jsx";
 
 const stats = [
   { id: 1, num: "1200", text: "Students graduated" },
@@ -20,24 +21,26 @@ const styles = {
 const HomeNumbers = () => {
   return (
     <section className="bg-[#FEDBD3] p-[20px] w-full">
-      <div className={styles.container}>
-        {stats.map((stat, index) => (
-          <Fragment key={stat.id}>
-            <div className={styles.item}>
-              <span className={styles.number}>{stat.num}</span>
-              <span className={styles.text}>{stat.text}</span>
-            </div>
+      <ZoominComponent>
+        <div className={styles.container}>
+          {stats.map((stat, index) => (
+            <Fragment key={stat.id}>
+              <div className={styles.item}>
+                <span className={styles.number}>{stat.num}</span>
+                <span className={styles.text}>{stat.text}</span>
+              </div>
 
-            {index !== stats.length - 1 && <div className={styles.dot}></div>}
-          </Fragment>
-        ))}
+              {index !== stats.length - 1 && <div className={styles.dot}></div>}
+            </Fragment>
+          ))}
 
-        <img
-          className="absolute left-[-144px]"
-          src={HomeNumbersCorner}
-          alt="HomeNumbersCorner"
-        />
-      </div>
+          <img
+            className="absolute left-[-144px]"
+            src={HomeNumbersCorner}
+            alt="HomeNumbersCorner"
+          />
+        </div>
+      </ZoominComponent>
     </section>
   );
 };

@@ -2,6 +2,9 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import OrangeBtn from "../../ui/OrangeBtn";
 import ZoonInComponent from "../../ui/ZoomInComponent";
+import HomePost1 from "../../assets/HomePosts1.svg";
+import HomePost2 from "../../assets/HomePosts2.svg";
+import HomePost3 from "../../assets/HomePosts3.svg";
 
 const POSTS = [
   {
@@ -17,7 +20,7 @@ const POSTS = [
     cta: "Listen",
     to: "/blog",
     bgColor: "#D6E9F8",
-    image: {},
+    image: HomePost1,
   },
   {
     id: 2,
@@ -33,7 +36,7 @@ const POSTS = [
     cta: "Watch",
     to: "/blog/product-feedback",
     bgColor: "#C8EDE3",
-    image: null,
+    image: HomePost2,
   },
   {
     id: 3,
@@ -49,7 +52,7 @@ const POSTS = [
     cta: "Read",
     to: "/blog/creative-profession",
     bgColor: "#F5F0C0",
-    image: null,
+    image: HomePost3,
   },
 ];
 

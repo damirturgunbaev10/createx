@@ -10,17 +10,16 @@ const EventCard = ({
   type = "Online event",
   onViewMore,
   button,
+  isGridView = false,
 }) => {
   const formattedDay = String(day).padStart(2, "0");
 
   return (
     <div
-      className="
-      w-[1230px]
-      m-auto
+      className={`
+        w-full
         group
-        flex items-center gap-6
-        px-6 py-5
+        flex
         bg-white
         border border-[#fde8e4]
         rounded-xl
@@ -29,65 +28,53 @@ const EventCard = ({
         hover:border-[#f4836a]
         hover:shadow-[0_6px_28px_rgba(234,88,60,0.10)]
         hover:-translate-y-0.5
-      "
+        ${
+          isGridView
+            ? "flex-col items-start p-6 min-h-[270px] justify-between"
+            : "flex-row items-center gap-6 px-6 py-5"
+        }
+      `}
     >
-      {/* Date block */}
-      <div className="flex flex-col items-center min-w-[52px] shrink-0">
-        <span
-          className="
-            text-[2.4rem] font-bold leading-none tracking-tight
-            text-[#e84b30]
-            transition-colors duration-200
-            group-hover:text-[#c93a21]
-          "
-        >
-          {formattedDay}
-        </span>
-        <span className="text-[0.75rem] font-semibold text-neutral-800 uppercase tracking-wider mt-0.5">
-          {month}
-        </span>
+      <div
+        className={`flex ${isGridView ? "w-full justify-between items-center mb-4" : "items-center gap-6 shrink-0"}`}
+      >
+        <div className="flex flex-col items-center min-w-[52px] shrink-0">
+          <span className="text-[2.4rem] font-bold leading-none tracking-tight text-[#e84b30] transition-colors duration-200 group-hover:text-[#c93a21]">
+            {formattedDay}
+          </span>
+          <span className="text-[0.75rem] font-semibold text-neutral-800 uppercase tracking-wider mt-0.5">
+            {month}
+          </span>
+        </div>
+
+        {!isGridView && (
+          <div className="w-px h-12 shrink-0 rounded-full bg-[#f0d5d0] transition-colors duration-200 group-hover:bg-[#f4a090]" />
+        )}
+
+        <p className="text-[0.75rem] font-medium text-neutral-400 whitespace-nowrap tracking-wide">
+          {timeStart} - {timeEnd}
+        </p>
       </div>
 
-      {/* Divider */}
-      <div
-        className="
-          w-px h-12 shrink-0 rounded-full
-          bg-[#f0d5d0]
-          transition-colors duration-200
-          group-hover:bg-[#f4a090]
-        "
-      />
-
-      {/* Time */}
-      <p className="text-[0.75rem] font-medium text-neutral-400 whitespace-nowrap shrink-0 min-w-[80px] tracking-wide">
-        {timeStart} - {timeEnd}
-      </p>
-
-      {/* Title + Type */}
-      <div className="flex-1 min-w-0">
-        <p
-          className="
-            text-[0.95rem] font-bold text-neutral-900 leading-snug mb-1
-            transition-colors duration-200
-            group-hover:text-[#e84b30]
-          "
-        >
+      <div className={`flex-1 min-w-0 ${isGridView ? "w-full mb-6" : ""}`}>
+        <p className="text-[0.95rem] font-bold text-neutral-900 leading-snug mb-1 transition-colors duration-200 group-hover:text-[#e84b30] line-clamp-3">
           {title}
         </p>
         <p className="text-[0.75rem] font-normal text-neutral-400">{type}</p>
       </div>
 
-      {/* Button */}
-      {button ? (
-        button
-      ) : (
-        <OutlineBtn
-          className="w-[120px] h-[40px] shrink-0"
-          onClick={onViewMore}
-        >
-          View more
-        </OutlineBtn>
-      )}
+      <div className={isGridView ? "w-full" : "shrink-0"}>
+        {button ? (
+          button
+        ) : (
+          <OutlineBtn
+            className={`${isGridView ? "w-full" : "w-[120px]"} h-[40px] shrink-0`}
+            onClick={onViewMore}
+          >
+            View more
+          </OutlineBtn>
+        )}
+      </div>
     </div>
   );
 };

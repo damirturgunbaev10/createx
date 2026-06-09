@@ -9,7 +9,6 @@ const AuthLink = ({ onClick }) => {
     >
       <User size={20} strokeWidth={2} />
 
-      {/* Текст ссылки */}
       <span className="text-base leading-6">Log in / Register</span>
     </button>
   );

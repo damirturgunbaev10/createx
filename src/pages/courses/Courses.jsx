@@ -1,14 +1,14 @@
 import React from "react";
 import CoursesIntro from "./CoursesIntro";
 import CoursesFeedback from "./CoursesFeedback";
-import CoursesSubscription from "./CoursesSubscription";
+import HomeSubscription from "../home/HomeSubscription";
 
 const Courses = () => {
   return (
     <div>
       <CoursesIntro />
       <CoursesFeedback />
-      <CoursesSubscription />
+      <HomeSubscription />
     </div>
   );
 };
