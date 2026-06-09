@@ -2,7 +2,7 @@ import React from "react";
 import OrangeBtn from "../../ui/OrangeBtn";
 import OutlineBtn from "../../ui/OutLineBtn.jsx";
 import PlayShowreel from "../../ui/PlayShowreel";
-import HomeIntroBCg from "../../assets/HomeIntroBCg.svg";
+import HomeIntroBcg from "../../assets/HomeIntroBcg.svg";
 import HomeIntroArrow from "../../assets/HomeIntroArrow.svg";
 import HomeIntroShapes from "../../assets/HomeIntroShapes.svg";
 import HomeIntroShapes2 from "../../assets/HomeIntroShapes2.svg";
@@ -48,7 +48,7 @@ const HomeIntro = () => {
             />
           </div>
           <div>
-            <img src={HomeIntroBCg} alt="HomeIntroBCg" />
+            <img src={HomeIntroBcg} alt="HomeIntroBCg" />
           </div>
 
           <img
