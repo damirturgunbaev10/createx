@@ -1,15 +1,15 @@
 import React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import {
-  FaFacebookF,
-  FaTwitter,
-  FaYoutube,
-  FaTelegramPlane,
-  FaInstagram,
-  FaLinkedinIn,
-  FaPhoneAlt,
-  FaEnvelope,
-} from "react-icons/fa";
+  RiFacebookFill,
+  RiTwitterFill,
+  RiYoutubeFill,
+  RiTelegram2Fill,
+  RiInstagramLine,
+  RiLinkedinFill,
+  RiSmartphoneLine,
+  RiMailLine,
+} from "react-icons/ri";
 import { FiSend } from "react-icons/fi";
 import { IoArrowUpOutline } from "react-icons/io5";
 import { AiFillHeart } from "react-icons/ai";
@@ -31,7 +31,7 @@ const Footer = () => {
   const inactiveClassName =
     "text-[#A4A6B3] text-[14px] font-medium relative w-fit hover:text-[#FF3F3A] transition-colors duration-300 after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-[#FF3F3A] after:transition-all after:duration-300 hover:after:w-full";
   const socialIconClass =
-    "w-[36px] h-[36px] rounded-full border border-[#3D3F4E] flex items-center justify-center text-[#A4A6B3] transition-all duration-300 hover:border-[#FF3F3A] hover:text-[#FF3F3A] hover:bg-[#FF3F3A]/10 cursor-pointer";
+    "w-[36px] h-[36px]  flex items-center justify-center text-[#A4A6B3] transition-all duration-300 hover:border-[#FF3F3A] hover:text-[#FF3F3A] hover:bg-[#FF3F3A]/10 cursor-pointer";
 
   return (
     <footer className="w-full bg-[#1E212C] h-[398px]">
@@ -92,7 +92,7 @@ const Footer = () => {
               rel="noreferrer"
               className={socialIconClass}
             >
-              <FaFacebookF size={13} />
+              <RiFacebookFill size={22} />
             </a>
             <a
               href="https://twitter.com"
@@ -100,7 +100,7 @@ const Footer = () => {
               rel="noreferrer"
               className={socialIconClass}
             >
-              <FaTwitter size={13} />
+              <RiTwitterFill size={22} />
             </a>
             <a
               href="https://youtube.com"
@@ -108,7 +108,7 @@ const Footer = () => {
               rel="noreferrer"
               className={socialIconClass}
             >
-              <FaYoutube size={14} />
+              <RiYoutubeFill size={22} />
             </a>
             <a
               href="https://t.me"
@@ -116,7 +116,7 @@ const Footer = () => {
               rel="noreferrer"
               className={socialIconClass}
             >
-              <FaTelegramPlane size={13} />
+              <RiTelegram2Fill size={22} />
             </a>
             <a
               href="https://instagram.com"
@@ -124,7 +124,7 @@ const Footer = () => {
               rel="noreferrer"
               className={socialIconClass}
             >
-              <FaInstagram size={13} />
+              <RiInstagramLine size={22} />
             </a>
             <a
               href="https://linkedin.com"
@@ -132,7 +132,7 @@ const Footer = () => {
               rel="noreferrer"
               className={socialIconClass}
             >
-              <FaLinkedinIn size={13} />
+              <RiLinkedinFill size={22} />
             </a>
           </div>
         </div>
@@ -237,7 +237,7 @@ const Footer = () => {
             href="tel:+14055550128"
             className="flex items-center gap-[10px] text-[#A4A6B3] text-[14px] transition-colors duration-300 hover:text-[#FF3F3A] group"
           >
-            <FaPhoneAlt
+            <RiSmartphoneLine
               size={12}
               className="text-[#A4A6B3] group-hover:text-[#FF3F3A] transition-colors duration-300"
             />
@@ -247,7 +247,7 @@ const Footer = () => {
             href="mailto:hello@createx.com"
             className="flex items-center gap-[10px] text-[#A4A6B3] text-[14px] transition-colors duration-300 hover:text-[#FF3F3A] group"
           >
-            <FaEnvelope
+            <RiMailLine
               size={12}
               className="text-[#A4A6B3] group-hover:text-[#FF3F3A] transition-colors duration-300"
             />

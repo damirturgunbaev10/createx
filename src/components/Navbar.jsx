@@ -100,14 +100,6 @@ const Navbar = ({ isColoredBg }) => {
               Events
             </NavLink>
             <NavLink
-              to="/blog"
-              className={({ isActive }) =>
-                isActive ? activeClassName : inactiveClassName
-              }
-            >
-              Blog
-            </NavLink>
-            <NavLink
               to="/contacts"
               className={({ isActive }) =>
                 isActive ? activeClassName : inactiveClassName
@@ -122,7 +114,6 @@ const Navbar = ({ isColoredBg }) => {
           <OrangeBtn link="/contacts" className="w-[207px] h-[52px]">
             Get consultation
           </OrangeBtn>
-          <AuthLink onClick={() => console.log("Клик по логину")} />
         </div>
 
         <img

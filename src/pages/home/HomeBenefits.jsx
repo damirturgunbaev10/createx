@@ -3,10 +3,11 @@ import HomeBenefitsImg from "../../assets/HomeBenefitsImg.svg";
 import ZoomInComponent from "../../ui/ZoomInComponent";
 
 import {
-  HiOutlineStar,
-  HiOutlineHandThumbUp,
-  HiOutlineChatBubbleLeftRight,
-} from "react-icons/hi2";
+  RiStarLine,
+  RiThumbUpLine,
+  RiStackLine,
+  RiChat1Line,
+} from "react-icons/ri";
 import { FiBookOpen } from "react-icons/fi";
 
 const TabButton = ({ isActive, onClick, icon: Icon, label }) => (
@@ -29,10 +30,10 @@ export default function HomeBenefits() {
   const [activeTab, setActiveTab] = useState("tutors");
 
   const tabs = [
-    { id: "tutors", label: "Experienced Tutors", icon: HiOutlineStar },
-    { id: "feedback", label: "Feedback & Support", icon: HiOutlineHandThumbUp }, // Fixed here
-    { id: "library", label: "24/7 Online Library", icon: FiBookOpen },
-    { id: "community", label: "Community", icon: HiOutlineChatBubbleLeftRight },
+    { id: "tutors", label: "Experienced Tutors", icon: RiStarLine },
+    { id: "feedback", label: "Feedback & Support", icon: RiThumbUpLine },
+    { id: "library", label: "24/7 Online Library", icon: RiStackLine },
+    { id: "community", label: "Community", icon: RiChat1Line },
   ];
 
   const tabContent = {

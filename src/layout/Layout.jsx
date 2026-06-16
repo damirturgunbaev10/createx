@@ -3,13 +3,15 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
 const Layout = () => {
-  const location = useLocation();
+  const use_location = useLocation();
 
   const isColoredPage =
-    location.pathname === "/" || location.pathname.startsWith("/course");
+    use_location.pathname === "/" ||
+    use_location.pathname.startsWith("/courses") ||
+    use_location.pathname.startsWith("/events/");
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-white">
       <Navbar isColoredBg={isColoredPage} />
 
       <main className="flex-grow">

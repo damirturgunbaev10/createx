@@ -76,7 +76,6 @@ function CoursedFeedback() {
         </div>
 
         <div className="w-full max-w-[1230px] flex flex-col items-center justify-between min-h-[480px] md:min-h-[556px] relative z-10">
-          {/* Header Section */}
           <div className="text-center mb-8 relative">
             <span className="text-xs font-bold tracking-[0.2em] text-[#1E212C] uppercase block mb-2">
               Testimonials
@@ -92,7 +91,6 @@ function CoursedFeedback() {
           </div>
 
           <div className="w-full flex items-center justify-between relative px-0 md:px-12">
-            {/* Left Arrow */}
             <button
               ref={prevRef}
               className="hidden md:flex items-center justify-center w-12 h-12 rounded-full bg-transparent text-[#424551] hover:bg-[#FF3F3A] hover:text-white hover:shadow-md active:scale-95 transition-all duration-300 z-20 focus:outline-none mr-6 lg:mr-10"

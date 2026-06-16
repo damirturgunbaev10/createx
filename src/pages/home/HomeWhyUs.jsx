@@ -1,7 +1,7 @@
 import React from "react";
 import HomeWhyUsImg from "../../assets/HomeWhyUs.png";
 import OrangeBtn from "../../ui/OrangeBtn";
-import { GoCheckCircle } from "react-icons/go";
+import { RiCheckboxCircleLine } from "react-icons/ri";
 import { HiPlay } from "react-icons/hi2";
 import ZoomInComponent from "../../ui/ZoomInComponent.jsx";
 import HomeWhyUsCircles from "../../assets/HomeWhyUsCircles.svg";
@@ -61,32 +61,32 @@ const HomeWhyUs = () => {
 
             <ul className="mt-2">
               <li className={liStyle}>
-                <GoCheckCircle className="text-[#FF3F3A] w-5 h-5 shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
+                <RiCheckboxCircleLine className="text-[#FF3F3A] w-5 h-5 shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
                 <span>
                   A fermentum in morbi pretium aliquam adipiscing donec tempus.
                 </span>
               </li>
               <li className={liStyle}>
-                <GoCheckCircle className="text-[#FF3F3A] w-5 h-5 shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
+                <RiCheckboxCircleLine className="text-[#FF3F3A] w-5 h-5 shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
                 <span>Vulputate placerat amet pulvinar lorem nisl.</span>
               </li>
               <li className={liStyle}>
-                <GoCheckCircle className="text-[#FF3F3A] w-5 h-5 shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
+                <RiCheckboxCircleLine className="text-[#FF3F3A] w-5 h-5 shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
                 <span>
                   Consequat feugiat habitant gravida quisque elit bibendum id
                   adipiscing sed.
                 </span>
               </li>
               <li className={liStyle}>
-                <GoCheckCircle className="text-[#FF3F3A] w-5 h-5 shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
+                <RiCheckboxCircleLine className="text-[#FF3F3A] w-5 h-5 shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
                 <span>Etiam duis lobortis in fames ultrices commodo nibh.</span>
               </li>
               <li className={liStyle}>
-                <GoCheckCircle className="text-[#FF3F3A] w-5 h-5 shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
+                <RiCheckboxCircleLine className="text-[#FF3F3A] w-5 h-5 shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
                 <span>Tincidunt sagittis neque sem ac eget.</span>
               </li>
               <li className={liStyle}>
-                <GoCheckCircle className="text-[#FF3F3A] w-5 h-5 shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
+                <RiCheckboxCircleLine className="text-[#FF3F3A] w-5 h-5 shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
                 <span>
                   Ultricies amet justo et eget quisque purus vulputate dapibus
                   tortor.

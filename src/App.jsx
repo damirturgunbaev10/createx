@@ -10,6 +10,7 @@ import Contacts from "./pages/contacts/Contacts";
 import Login from "./components/Login";
 import Signin from "./components/Signin";
 import Profile from "./pages/profile/Profile";
+import EventSinglePage from "./pages/events/EventSinglePage";
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
           <Route path="courses/:id" element={<SingleCourse />} />
 
           <Route path="events" element={<Events />} />
+          <Route path="/events/:id" element={<EventSinglePage />} />
           <Route path="blog" element={<Blog />} />
           <Route path="contacts" element={<Contacts />} />
           <Route path="profile" element={<Profile />} />

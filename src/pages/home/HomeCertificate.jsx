@@ -3,6 +3,15 @@ import { motion, AnimatePresence } from "framer-motion";
 import HomeCertificateImg from "../../assets/HomeCertificate.png";
 import ZoomInComponent from "../../ui/ZoomInComponent";
 
+const COLORS = [
+  "#FF5A5F",
+  "#3B82F6",
+  "#10B981",
+  "#F59E0B",
+  "#EC4899",
+  "#8B5CF6",
+];
+
 const CompanyLogo = ({ name, icon }) => (
   <div className="flex items-center gap-1.5 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-200">
     <span className="text-emerald-500 font-bold text-lg">{icon}</span>
@@ -13,23 +22,20 @@ const CompanyLogo = ({ name, icon }) => (
 );
 
 const Particle = ({ delay, color, angle, distance }) => {
-  const radians = (angle * Math.PI) / 180;
-  const xTarget = Math.cos(radians) * distance;
-  const yTarget = Math.sin(radians) * distance;
-
+  const rad = (angle * Math.PI) / 180;
   return (
     <motion.div
       initial={{ x: 0, y: 0, opacity: 1, scale: 0 }}
       animate={{
-        x: xTarget,
-        y: yTarget,
+        x: Math.cos(rad) * distance,
+        y: Math.sin(rad) * distance,
         opacity: [1, 1, 0],
         scale: [0, 1.5, 0.5],
         rotate: [0, 360],
       }}
       transition={{
         duration: 2.5,
-        delay: delay,
+        delay,
         ease: "easeOut",
         repeat: Infinity,
         repeatDelay: 0.5,
@@ -43,33 +49,23 @@ const Particle = ({ delay, color, angle, distance }) => {
 export default function HomeCertificate() {
   const [isOpen, setIsOpen] = useState(false);
 
-  const colors = [
-    "#FF5A5F",
-    "#3B82F6",
-    "#10B981",
-    "#F59E0B",
-    "#EC4899",
-    "#8B5CF6",
-  ];
-
-  const staticParticles = useMemo(() => {
-    return Array.from({ length: 60 }).map((_, i) => ({
-      id: i,
-      delay: Math.random() * 0.4,
-      color: colors[i % colors.length],
-      angle: Math.random() * 360,
-      distance: Math.random() * 300 + 150,
-    }));
-  }, []);
+  const staticParticles = useMemo(
+    () =>
+      Array.from({ length: 60 }, (_, i) => ({
+        id: i,
+        delay: Math.random() * 0.4,
+        color: COLORS[i % COLORS.length],
+        angle: Math.random() * 360,
+        distance: Math.random() * 300 + 150,
+      })),
+    [],
+  );
 
   return (
     <section>
       <ZoomInComponent>
         <div className="w-full bg-white flex items-center justify-center py-10">
-          <div
-            style={{ width: "1230px", height: "500px" }}
-            className="font-sans flex items-center justify-between bg-white px-16 box-border relative"
-          >
+          <div className="w-[1230px] h-[500px] font-sans flex items-center justify-between bg-white px-16 relative box-border">
             <div className="flex flex-col justify-center max-w-sm z-10">
               <span className="text-xs font-bold tracking-widest text-gray-400 uppercase">
                 Createx Certificate
@@ -79,7 +75,7 @@ export default function HomeCertificate() {
                 <br />
                 be confirmed
               </h2>
-              <p className="text-gray-400 text-xs leading-relaxed font-normal mb-10 max-w-[280px]">
+              <p className="text-gray-400 text-xs leading-relaxed mb-10 max-w-[280px]">
                 We are accredited by international professional organizations
                 and institutes:
               </p>
@@ -100,7 +96,6 @@ export default function HomeCertificate() {
                     🔍 Click to expand
                   </span>
                 </div>
-
                 <img
                   className="w-full h-full object-contain group-hover:scale-[1.03] transition-transform duration-300 p-2"
                   src={HomeCertificateImg}
@@ -120,15 +115,9 @@ export default function HomeCertificate() {
                     className="absolute inset-0 bg-black/75 backdrop-blur-md cursor-zoom-out"
                   />
 
-                  <div className="relative z-10 flex items-center justify-center">
+                  <div className="relative z-10 flex items-center justify-center pointer-events-none">
                     {staticParticles.map((p) => (
-                      <Particle
-                        key={p.id}
-                        delay={p.delay}
-                        color={p.color}
-                        angle={p.angle}
-                        distance={p.distance}
-                      />
+                      <Particle key={p.id} {...p} />
                     ))}
 
                     <motion.div
@@ -140,7 +129,7 @@ export default function HomeCertificate() {
                         damping: 22,
                         stiffness: 260,
                       }}
-                      className="w-[850px] h-[600px] bg-white rounded-xl shadow-2xl p-6 flex items-center justify-center border border-gray-100 relative"
+                      className="w-[850px] h-[600px] bg-white rounded-xl shadow-2xl p-6 flex items-center justify-center border border-gray-100 relative pointer-events-auto"
                     >
                       <button
                         onClick={() => setIsOpen(false)}
@@ -148,7 +137,6 @@ export default function HomeCertificate() {
                       >
                         ✕
                       </button>
-
                       <div className="w-full h-full rounded-lg overflow-hidden flex items-center justify-center bg-white">
                         <img
                           src={HomeCertificateImg}
